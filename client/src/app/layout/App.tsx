@@ -1,36 +1,33 @@
-import { useEffect, useState } from "react"
-import { Product } from "../models/product";
 import Catalog from "../../features/catalog/Catalog";
-import { Typography } from "@mui/material";
+import { Container, CssBaseline, createTheme } from "@mui/material";
+import Header from "./Header";
+import { ThemeProvider } from "@emotion/react";
+import { useState } from "react";
 
 function App() {
-    const [products, setProducts] = useState<Product[]>([]);
+    const [darkMode, setDarkMode] = useState(false);
+    const palleteType = darkMode ? 'dark' : 'light';
 
-    useEffect(() => {
-        fetch('http://localhost:5000/api/products')
-            .then((response) => response.json())
-            .then(data => setProducts(data));
-    }, []);
+    const theme = createTheme({
+        palette: {
+            mode: palleteType,
+            background: {
+                default: palleteType === 'light' ? '#eaeaea' : '#121212'
+            }
+        }
+    })
 
-    function addProduct() {
-        setProducts(prevState => [...prevState,
-            {
-                id: prevState.length +101,
-                name: 'prod3' + prevState.length * 1,
-                price: 300.00,
-                brand: 'some brand',
-                description: 'some description',
-                pictureUrl: 'http://picsum.photos/200',
-            }]
-        );
-    }
-
-  return (
-      <div className='app'>
-          <Typography variant='h1'>React store</Typography>
-          <Catalog products={products} addProduct={addProduct} />
-      </div>
-  )
+    return (
+        <>
+            <ThemeProvider theme={theme }>
+                <CssBaseline />
+                <Header checked={darkMode} setDarkMode={setDarkMode} />
+                <Container>
+                    <Catalog />
+                </Container>
+            </ThemeProvider>
+        </>
+    )
 }
 
 export default App
