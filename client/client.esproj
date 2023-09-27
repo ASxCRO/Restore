@@ -11,6 +11,10 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\app\router\" />
     <Folder Include="src\assets\" />
+    <Folder Include="src\features\about\" />
+    <Folder Include="src\features\contact\" />
+    <Folder Include="src\features\home\" />
   </ItemGroup>
 </Project>
