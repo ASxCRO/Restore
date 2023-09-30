@@ -33,6 +33,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors(opt =>
 {
     opt.AllowAnyHeader();
+    opt.AllowCredentials();
     opt.WithOrigins("http://localhost:5173");
     opt.AllowAnyMethod();
 });
@@ -40,8 +41,6 @@ app.UseCors(opt =>
 app.UseAuthorization();
 
 app.MapControllers();
-
-
 
 var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<StoreContext>();
