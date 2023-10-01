@@ -20,7 +20,7 @@ namespace API.Controllers
         {
             var basket = await RetreiveBasket();
 
-            if (basket == null) return NotFound();
+            if (basket == null) basket = CreateBasket();
 
             return MapBasketToDto(basket);
         }
