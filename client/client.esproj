@@ -14,6 +14,7 @@
     <Folder Include="src\app\api\" />
     <Folder Include="src\app\errors\" />
     <Folder Include="src\app\context\" />
+    <Folder Include="src\app\util\" />
     <Folder Include="src\app\router\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\features\about\" />

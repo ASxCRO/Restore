@@ -36,11 +36,11 @@ export function StoreProvider({ children }: PropsWithChildren<any>) {
                 return {...prevState!, items}
             })
         }
-
-        return (
-            <StoreContext.Provider value={{basket,setBasket,removeItem}}>
-                {children}
-            </StoreContext.Provider>
-        )
     }
+
+    return (
+        <StoreContext.Provider value={{ basket, setBasket, removeItem }}>
+            {children}
+        </StoreContext.Provider>
+    )
 }

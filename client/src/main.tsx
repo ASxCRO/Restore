@@ -12,7 +12,7 @@ import { StoreProvider } from './app/context/StoreContext.tsx';
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <StoreProvider>
-        <RouterProvider router={router} />
+            <RouterProvider router={router} />
         </StoreProvider>
   </React.StrictMode>,
 )
