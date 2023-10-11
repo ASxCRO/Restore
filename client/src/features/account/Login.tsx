@@ -32,7 +32,7 @@ export default function Login() {
                     variant="outlined"
                     {...register('username', { required: 'Username is required' })}
                     error={!!errors.username}
-                    helperText={errors?.username?.message}
+                    helperText={errors?.username?.message as string}
                 />
                 <TextField
                     label="Password"
@@ -42,7 +42,7 @@ export default function Login() {
                     variant="outlined"
                     {...register('password', { required: 'Password is required' })}
                     error={!!errors.password}
-                    helperText={errors?.username?.message}
+                    helperText={errors?.username?.message as string}
                 />
                 <LoadingButton
                     type="submit"
