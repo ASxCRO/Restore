@@ -1,8 +1,6 @@
 import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
-import { Product } from "../../app/models/product";
 import { useEffect, useState } from "react";
-import agent from "../../app/api/agent";
 import NotFound from "../../app/errors/NotFound";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import { LoadingButton } from "@mui/lab";

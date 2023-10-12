@@ -49,7 +49,7 @@ export default function Header({ checked, setDarkMode }: Props) {
     const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0)
 
     return (
-        <AppBar position='static' sx={{mb:4} }>
+        <AppBar position='static'>
             <Toolbar sx={{display:'flex', justifyContent:'space-between' , alignItems: 'center'} }>
                 <Box sx={{ display: 'flex',  alignItems: 'center' } }>
                     <Typography variant='h6' component={NavLink} to='/'

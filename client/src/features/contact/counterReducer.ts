@@ -11,6 +11,6 @@ const initialState: CouterState = {
     title: 'YARC (yet another redux counter)'
 }
 
-export default function counterReducer(state = initialState, action: any) {
+export default function counterReducer(state = initialState) {
     return state;
 }

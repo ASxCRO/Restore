@@ -1,4 +1,4 @@
-import { TableContainer, Paper, Table, TableBody, TableRow, TableCell, Typography, Grid } from "@mui/material";
+import { TableContainer, Paper, Table, TableBody, TableRow, TableCell} from "@mui/material";
 import { useAppSelector } from "../../app/store/configureStore";
 
 export default function BasketSummary() {
