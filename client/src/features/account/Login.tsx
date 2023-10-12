@@ -1,5 +1,5 @@
 import { Container, TextField, Typography } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FieldValues, useForm } from 'react-hook-form';
 import { LoadingButton } from '@mui/lab';
 import { useAppDispatch } from '../../app/store/configureStore';
@@ -7,6 +7,7 @@ import { signInUser } from './accountSlice';
 
 export default function Login() {
     const navigate = useNavigate();
+    const location = useLocation();
     const dispatch = useAppDispatch();
 
     const { register, handleSubmit, formState: { isSubmitting, errors, isValid } } = useForm({
@@ -14,8 +15,13 @@ export default function Login() {
     });
 
     async function submitForm(data: FieldValues) {
-        await dispatch(signInUser(data));
-        navigate('/catalog');
+        try {
+            await dispatch(signInUser(data));
+            navigate(location.state?.from || 'catalog');
+        } catch (e) {
+            console.log(e);
+        }
+        
     }
 
     return (
